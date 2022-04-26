@@ -23,6 +23,7 @@ class _ForEachMethodState extends State<ForEachMethod> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
+            // for performs the same function that performs forEach
             for (var friend in myFriends) {
               friend.color = (Random().nextDouble() * 0xFFFFFFFF).toInt();
             }
