@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:list_filtring/for_each.dart';
-import 'package:list_filtring/map.dart';
-import 'package:list_filtring/where_function.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:list_filtring/Hive/item.dart';
+import 'package:list_filtring/reduce_method.dart';
 
-void main() {
+void main() async{
+ WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+   
+  Hive.registerAdapter(ItemBudgetAdapter());
+  await Hive.openBox<ItemBudget>('budget');
+
   runApp(const MyApp());
 }
 
@@ -18,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MapFunction(),
+      home: const ReduceMethod(),
     );
   }
 }
