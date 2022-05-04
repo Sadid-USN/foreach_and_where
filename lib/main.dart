@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:list_filtring/Hive/item.dart';
-import 'package:list_filtring/reduce_method.dart';
+import 'package:list_filtring/widget/image_picker.dart';
 
 void main() async{
  WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ReduceMethod(),
+      home: const MyImagePicker(),
     );
   }
 }
